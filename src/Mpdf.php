@@ -27367,7 +27367,7 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 	protected function aliasReplace($html, $PAGENO, $NbPgGp, $NbPg)
 	{
 		// Replaces for header and footer
-		$html = str_replace('{PAGENO}', $PAGENO, $html);
+		$html = str_replace('{PAGENO}', ($PAGENO > 10 ? $PAGENO : "0".$PAGENO), $html);
 		$html = str_replace($this->aliasNbPgGp, $NbPgGp, $html); // {nbpg}
 		$html = str_replace($this->aliasNbPg, $NbPg, $html); // {nb}
 
